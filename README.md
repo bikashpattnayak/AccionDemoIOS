@@ -1,4 +1,4 @@
 # AccionDemo
-Appium Automation - Geny Motion
+Appium Automation - IOS
 
 
