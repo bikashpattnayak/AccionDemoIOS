@@ -168,8 +168,10 @@ public class App {
 
 	public static String updateSalutation(IOSDriver<IOSElement> driver) {
 		String saluationValue = driver.findElementsByXPath("//XCUIElementTypeStaticText[@name='Title']/../XCUIElementTypeStaticText").get(1).getAttribute("label");
-		if(!(saluationValue.equals("Title") || saluationValue.equals("Miss")))
-			saluationValue = saluationValue + ".";
+		if(!(saluationValue.equals("Title") || saluationValue.equals("Miss"))) {
+			if(!saluationValue.endsWith("."))
+				saluationValue = saluationValue + ".";
+		}
 		System.out.println("Original Salutation Value "+ saluationValue);
 		driver.findElementByXPath("//XCUIElementTypeStaticText[@name='Title']").click();
 		List<String> saluation = new ArrayList<String>();
